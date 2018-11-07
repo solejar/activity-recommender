@@ -1,0 +1,50 @@
+
+.background {
+    background-color: #CCFFFF;
+}
+.plain {
+    background-color: #FAFAFA;
+    color: black;
+}
+.card {
+    background-color: #FFFFB3;
+    color: black;
+    height: 300px;
+}
+.content {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.subcontent{
+    background-color: #d1d194;
+    color: black;
+    font-size: 0.8em;
+    min-height: 50px;
+}
+.secondary {
+    background-color: #3F51B5;
+    /*background-color: #759EFD;*/
+    color: white;
+}
+.small-button {
+    /*width: 30px;*/
+    text-align: center;
+    min-width: 32px;
+}
+.again {
+    /*white-space: pre-wrap;*/
+    background-color: #ba190b;
+}
+.hard {
+    /*white-space: pre-wrap;*/
+    background-color: #e8807a;
+}
+.good {
+    /*white-space: pre-wrap;*/
+    background-color: #e2df6f;
+}
+.easy {
+    /*white-space: pre-wrap;*/
+    background-color: #7fd847;
+}

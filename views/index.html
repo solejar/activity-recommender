@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html ng-app="lang">
+<head>
+  <title>
+    Super Activity Recommender v1.0
+  </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./node_modules/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-aria/angular-aria.min.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-material/angular-material.min.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-messages/angular-messages.min.js"></script>
+
+  <script type="text/javascript" src="./app/app.js"></script>
+
+  <script type="text/javascript" src="./app/controllers/header.controller.js"></script>
+
+</head>
+<body ng-controller="headerCtrl as header">
+
+        <div style="background-color: #ccffff; height: 100%" flex="100" layout-align="center" layout="row" >
+            <div flex="10">
+            </div>
+            <div flex="80" style="margin-top: 20px;" ng-show="header.contentIndex<header.content.length" id="content" >
+                <md-whiteframe  class="md-whiteframe-12dp" layout="column" ng-if="$index==header.contentIndex" ng-repeat="contentCard in header.content" style="background-color: #FAFAFA; height: 600px;">
+                    <md-toolbar ng-show="contentCard.isQuestion" id="description">
+                        <div class="md-toolbar-tools" style="text-align: center">
+                            {{contentCard.description}}
+                        </div>
+                    </md-toolbar>
+
+                    <div ng-show="!contentCard.isQuestion" style="text-align: center; height: 350px;">
+                        <div style="margin-top: 50px; font-size: 2.5em;">
+                            {{contentCard.description}}
+                        </div>
+                    </div>
+                    <div flex="60" style="height: 600px; margin-top: 80px;" ng-show="contentCard.isQuestion" layout-align="center">
+                        <div layout="row" layout-align="center" ng-repeat="option in contentCard.questionOptions">
+                            <div layout="column" layout-align="space-between">
+                                <md-button ng-class="option.selected ? 'md-raised md-primary': 'md-raised'" ng-click="header.adjustSelection(contentCard,$index)" style="text-transform: none; margin-top: 20px;">
+                                    {{option.description}}
+                                </md-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex="40" layout="column" layout-align="space-between">
+                        <div layout="row" layout-align="center">
+                            <md-button class="md-raised md-primary" ng-hide="header.contentIndex>=header.content.length||header.showSpinner" ng-disabled="!header.showContinueButton(contentCard)" ng-click="header.incrementIndex()">
+                                {{'Continue'}}
+                            </md-button>
+                            <i class="fa fa-spinner fa-spin" style="font-size:48px;color: #3F51B5" ng-show="header.showSpinner"></i>
+                        </div>
+                    </div>
+                </md-whiteframe>
+            </div>
+            <div flex="80" style="margin-top: 20px;" ng-show="header.contentIndex>=header.content.length" id="errorMessage">
+                <md-whiteframe class="md-whiteframe-12dp" layout="column" layout-align="center"  style="background-color: #FAFAFA; text-align: center; height: 600px;">
+                    <div layout-align="space-between" layout="column">
+
+                        <div flex="25" style="color: red; height: 70px;">*Critical Error*. Automatic Recommendation Malfunction.</div>
+
+                        <div flex="25" style="color: red; height: 80px;">For recommendations, contact the manual operator:</div>
+
+                        <div flex="25" style="height: 20px;" >(908)-619-8634</div>
+                        <div flex="25">Sean</div>
+
+                    </div>
+                </md-whiteframe>
+            </div>
+            <div flex="10">
+            </div>
+        </div>
+    </div>
+</body>

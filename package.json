@@ -1,0 +1,51 @@
+{
+  "name": "languages",
+  "version": "1.0.0",
+  "description": "This is a general package that contains a web application for my internal language learning purposes. The ultimate goal is two-fold. 1) to use my personal base of experience in several languages as a fulcrum from which to develop an extensible application which can provide some novel use for a underserved use case in the language learning community. 2) Perform a feasibility study on the medium of a MEAN stackfor this application, specifically as opposed to a mobile environment for the use case which I eventually decide to serve.",
+
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "languages",
+    "russian",
+    "japanese"
+  ],
+  "author": "Sean Olejar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solejar/languages/issues"
+  },
+  "homepage": "https://github.com/solejar/languages#readme",
+  "dependencies": {
+    "aws-sdk": "latest",
+    "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
+    "angular-aria": "^1.6.7",
+    "angular-material": "^1.1.5",
+    "angular-messages": "^1.6.7",
+    "angularjs-slider": "^6.5.1",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
+    "google-translate": "^2.0.5",
+    "google-translate-api": "^2.3.0",
+    "jsonwebtoken": "^8.1.1",
+    "mongodb": "^3.0.1",
+    "mongoose": "^5.0.4",
+    "morgan": "^1.9.0",
+    "node": "^9.3.0",
+    "nodemailer": "^4.6.0",
+    "nodemon": "^1.14.12",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0"
+  }
+}
